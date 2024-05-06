@@ -274,7 +274,7 @@ function Dashboard() {
               >
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 <XAxis axisLine={false} tickLine={false} dataKey="name" />
-                <YAxis  axisLine={false}  tickLine={false}/>
+                <YAxis axisLine={false} tickLine={false} />
                 <Tooltip />
                 <Bar
                   dataKey="pv"
@@ -284,7 +284,6 @@ function Dashboard() {
                 />
                 <Bar
                   dataKey="uv"
-                  
                   fill="red"
                   barSize={10}
                   radius={[10, 10, 0, 0]}
@@ -314,39 +313,29 @@ function Dashboard() {
           <CardContent className="h-full w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
-                width={500}
-                height={300}
-                layout={"vertical"}
+                layout="vertical"
                 data={barData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
               >
-                <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                <XAxis  axisLine={false}
-                  tickLine={false} dataKey="name" />
-                <YAxis
-                  dataKey="uv"
-                  type={"category"}
-                  axisLine={false}
-                  tickLine={false}
-                  
-                />
-                <Tooltip />
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis  axisLine={false} tickLine={false} type="number" />
+                <YAxis  axisLine={false} tickLine={false} dataKey="name" type="category" />
+                <Tooltip  />
                 <Bar
                   dataKey="pv"
-                  fill="green"
                   barSize={10}
-                  radius={[10, 10, 0, 0]}
+                  radius={[10, 0, 0, 10]}
+                  stackId="a"
+                  fill="red"
+      
                 />
                 <Bar
                   dataKey="uv"
-                  fill="red"
                   barSize={10}
-                  radius={[10, 10, 0, 0]}
+                  radius={[0, 10, 10, 0]}
+                  stackId="a"
+                  fill="green"
+               
                 />
               </BarChart>
             </ResponsiveContainer>
